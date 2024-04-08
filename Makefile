@@ -1,7 +1,6 @@
 SHELL=sh
 
 install:
-	
 
 ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
@@ -12,7 +11,7 @@ compose_up:
 run_dev:
 	docker-compose -f docker-compose.override.yml up --abort-on-container-exit --exit-code-from app
 
-run_tests:
+test:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 build_prod:
