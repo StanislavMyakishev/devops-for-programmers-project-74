@@ -12,7 +12,7 @@ run_dev:
 	docker-compose -f docker-compose.override.yml up --abort-on-container-exit --exit-code-from app
 
 test:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+	docker-compose -f docker-compose.yml up --abort-on-container-exit
 
 build_prod:
 	docker-compose -f docker-compose.yml build app
