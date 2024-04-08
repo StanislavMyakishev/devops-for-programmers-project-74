@@ -1,9 +1,6 @@
 name: push-workflow
 
-on: 
-  push:
-    branches:
-      - '**'
+on: push
 
 jobs: 
   test: 
@@ -13,7 +10,7 @@ jobs:
       - name: Run tests
         run: make test
 
-push:
+  push:
     needs: test
     runs-on: ubuntu-latest
     steps:
