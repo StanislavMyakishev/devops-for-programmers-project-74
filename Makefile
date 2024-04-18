@@ -1,11 +1,7 @@
-SHELL=sh
-
-ci: install test
-
 install:
 	docker compose run --rm app npm ci
 
-test:
+ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 run_dev:
