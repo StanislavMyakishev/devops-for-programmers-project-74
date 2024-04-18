@@ -4,8 +4,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    command: bash -c "sleep 5 && npm test"
+    command: bash -c 'sleep 3 && npm run test'
     image: smyakishev/devops-for-programmers-project-74
-    volumes:
-      - ./app:/app
-  
