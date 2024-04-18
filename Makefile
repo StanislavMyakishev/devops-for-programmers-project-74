@@ -1,7 +1,7 @@
 SHELL=sh
 
 ci:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit
+	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 compose_up:
 	docker-compose up

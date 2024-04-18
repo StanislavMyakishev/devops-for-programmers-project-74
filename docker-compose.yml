@@ -1,8 +1,9 @@
 version: "3"
 services:
   app:
-    image: smyakishev/devops-for-programmers-project-74
-    command: npm test
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile.production
+    command: npm test
+    image: smyakishev/devops-for-programmers-project-74
+  
