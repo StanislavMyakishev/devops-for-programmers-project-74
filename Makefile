@@ -1,16 +1,15 @@
 SHELL=sh
 
+ci: install test
+
 install:
 	docker compose run --rm app npm ci
 
-ci:
+test:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 run_dev:
 	docker-compose -f docker-compose.override.yml up --abort-on-container-exit --exit-code-from app
-
-build:
-	docker-compose -f docker-compose.yml build app
 
 push:
 	docker-compose -f docker-compose.yml push app

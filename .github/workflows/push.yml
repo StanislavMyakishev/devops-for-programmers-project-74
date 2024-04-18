@@ -16,9 +16,6 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build app
-        run: make build
-
       - name: Run tests
         run: make ci
 
