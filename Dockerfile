@@ -1,5 +1,3 @@
-FROM node:14.18.1-slim
+FROM node:14.18.1
 
 WORKDIR /app
-
-CMD ["bash", "-c", "npm test"]
