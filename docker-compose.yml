@@ -6,4 +6,6 @@ services:
       dockerfile: Dockerfile.production
     command: npm test
     image: smyakishev/devops-for-programmers-project-74
+    volumes:
+      - ./app:/app
   
