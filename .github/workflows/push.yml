@@ -16,18 +16,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build app
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: Dockerfile.production
-          labels: latest
-          tags: ${{ github.ref }}
-
       - name: Run tests
         run: make ci
 
-      - name: Push App
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: .
