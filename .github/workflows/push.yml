@@ -16,6 +16,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Install
+        run: make install
+
+      - name: Run tests
+        run: make ci
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -24,5 +30,3 @@ jobs:
           push: true
           tags: ${{ github.ref }}
       
-      - name: Run tests
-        run: make ci

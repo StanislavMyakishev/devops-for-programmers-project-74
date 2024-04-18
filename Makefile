@@ -1,5 +1,8 @@
 SHELL=sh
 
+install:
+	docker compose run --rm app npm ci
+
 ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
@@ -9,10 +12,10 @@ compose_up:
 run_dev:
 	docker-compose -f docker-compose.override.yml up --abort-on-container-exit --exit-code-from app
 
-build_prod:
+build:
 	docker-compose -f docker-compose.yml build app
 
-push_prod:
+push:
 	docker-compose -f docker-compose.yml push app
 
 run_from_published_image:
